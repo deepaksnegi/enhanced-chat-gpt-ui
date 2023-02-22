@@ -1,0 +1,50 @@
+.chat-input-container {
+  padding: 12px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .chat-input {
+    background-color: #40414f;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 8px 0 rgba(#000, 0.25);
+    padding: 12px;
+    color: #fff;
+    width: 90%;
+    font-size: 1.2rem;
+    resize: none;
+  }
+}
+
+.chat-container {
+  .message-container {
+    padding: 12px;
+    padding-left: 15%;
+    display: flex;
+    align-items: center;
+  }
+
+  .chat-gpt {
+    background-color: #444654;
+  }
+
+  .avatar {
+    background-color: #a9a4a4;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+  }
+
+  .chat-gpt-avatar {
+    background-color: rgba(27, 168, 100, 0.958);
+  }
+
+  .message {
+    margin-left: 25px;
+  }
+}
