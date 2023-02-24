@@ -1,5 +1,6 @@
 import "./chatbox.style.scss";
 import React, { useState } from "react";
+
 type Props = {};
 
 type Chat = {
@@ -10,7 +11,9 @@ type Chat = {
 const initialState = [
   {
     user: "chatgpt",
-    text: "Hello world!",
+    text: `Go to OpenAI's website. If you don't have an account, you will need to create one or sign up using your Google or Microsoft account.
+    Click on the Create new secret key button.
+    Copy the key and paste it into the API Key field in the extension settings.`,
   },
 ];
 
@@ -22,6 +25,8 @@ const delay = (time: number) =>
   );
 
 const ChatBox = (props: Props) => {
+  const key = "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";
+
   const [message, setMessage] = useState("");
   const [chats, setChats] = useState<Chat[]>(initialState);
 
@@ -29,11 +34,17 @@ const ChatBox = (props: Props) => {
     event.preventDefault();
     setChats([...chats, { user: "me", text: message }]);
     setMessage("");
+
+    setChats((prevChat) => [
+      ...prevChat,
+      { user: "chatgpt", text: "generating response...." },
+    ]);
+
     await delay(1000);
 
     setChats((prevChat) => [
       ...prevChat,
-      { user: "chatgpt", text: "Some response from chat gpt..." },
+      { user: "chatgpt", text: "Nice try but you have to enter keys..." },
     ]);
   };
   return (
@@ -60,7 +71,7 @@ const ChatBox = (props: Props) => {
           <input
             value={message}
             onChange={(event) => setMessage(event.target.value)}
-            className="chat-input"
+            className="input chat-input"
           />
         </div>
       </form>

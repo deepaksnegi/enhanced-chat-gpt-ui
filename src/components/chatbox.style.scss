@@ -1,3 +1,16 @@
+.input {
+  background-color: #40414f;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 8px 0 rgba(#000, 0.25);
+  padding: 12px;
+  color: #fff;
+  width: 100%;
+  font-size: 1.1rem;
+  resize: none;
+}
+
 .chat-input-container {
   padding: 12px;
   position: absolute;
@@ -7,16 +20,8 @@
   justify-content: center;
 
   .chat-input {
-    background-color: #40414f;
-    border-radius: 5px;
-    border: none;
-    outline: none;
-    box-shadow: 0 0 8px 0 rgba(#000, 0.25);
-    padding: 12px;
-    color: #fff;
     width: 90%;
     font-size: 1.2rem;
-    resize: none;
   }
 }
 
